@@ -3,29 +3,32 @@ package training.day1;
 public class BankPractice {
 
     public static void main(String[] args) {
+        Account account = new Account();
 
-        int a = 5;
-        int b = 2;
+//        account.accountName = "ABC";
+//        account.accountNumber = "123456789";
+//        account.accountType = "SAVING";
+//        account.amount = 5000.0;
+//        account.address = "test address";
+//        account.phoneNumber = "987546321";
+//        account.socialSecurityNumber = "147852369";
 
-        int c = addTwoNumbers(b,a);
-        System.out.println(c);
+        account.setAccountName("ABC");
+        account.setAccountNumber("123456789");
+        account.setAccountType("SAVING");
+        account.setAmount(5000.0);
+        account.setAddress("test address");
+        account.setPhoneNumber("987546321");
+        account.setSocialSecurityNumber("147852369");
 
-        int d = 5;
-        int e = 5;
 
-        int f = addTwoNumbers(e, d);
-        System.out.println(f);
+        System.out.println(account.getAccountName());
+        System.out.println(account.getAccountNumber());
+        System.out.println(account.getAccountType());
+        System.out.println(account.getAmount());
+        System.out.println(account.getAddress());
+        System.out.println(account.getPhoneNumber());
+//        System.out.println(account.getSocialSecurityNumber());
 
-        int g = 5;
-        int h = 10;
-
-        int i = addTwoNumbers(g,h);
-        System.out.println(i);
-    }
-
-    public static int addTwoNumbers(int a, int b)
-    {
-        int temp = a * b;
-        return temp;
     }
 }
