@@ -4,6 +4,9 @@ public class PredefinedClassesPractice {
 
     public static void main(String[] args) {
 
+
+
+
 //        Math math = new Math();
         System.out.println(Math.ceil(4.1));
         System.out.println(Math.floor(4.9));
