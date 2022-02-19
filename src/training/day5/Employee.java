@@ -1,5 +1,6 @@
 package training.day5;
 
+import java.util.Objects;
 import java.util.logging.Logger;
 
 public class Employee {
@@ -8,6 +9,7 @@ public class Employee {
     private float salary; // required
     private String phoneNumber; // required
     private String liscenceNumber; // optional
+    private Gender gender; // Male, Female, Others // required
 
 //    public Employee() {
 //        Logger.getGlobal().info("Default Constructor Called");
@@ -17,15 +19,16 @@ public class Employee {
 //        this.liscenceNumber = "";
 //    }
 
-    public Employee(String name, float salary, String phoneNumber){
-        this.name = name;
+    public Employee(String name, float salary, String phoneNumber, Gender gender){
+        this.name = Objects.requireNonNullElse(name, "");
         this.salary = salary;
-        this.phoneNumber = phoneNumber;
+        this.phoneNumber = Objects.requireNonNullElse(phoneNumber, "");
+        this.gender = gender;
         Logger.getGlobal().info("First Parameterized Constructor");
     }
 
-    public Employee(String name, float salary, String phoneNumber, String liscenceNumber){
-        this(name, salary, phoneNumber);
+    public Employee(String name, float salary, String phoneNumber, Gender gender, String liscenceNumber){
+        this(name, salary, phoneNumber, gender);
         this.liscenceNumber = liscenceNumber;
         Logger.getGlobal().info("Second Parameterized Constructor");
     }
@@ -60,6 +63,19 @@ public class Employee {
 
     public void setLiscenceNumber(String liscenceNumber) {
         this.liscenceNumber = liscenceNumber;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
+
+    // this
+    public void addBonus(float bonus){
+        this.salary = this.salary + bonus;
     }
 
     @Override
