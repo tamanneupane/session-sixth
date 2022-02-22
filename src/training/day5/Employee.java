@@ -5,11 +5,12 @@ import java.util.logging.Logger;
 
 public class Employee {
 
-    private String name; // required
+    private String name = ""; // required
     private float salary; // required
-    private String phoneNumber; // required
-    private String liscenceNumber; // optional
-    private Gender gender; // Male, Female, Others // required
+    private String phoneNumber = ""; // required
+    private String liscenceNumber = ""; // optional
+    private Gender gender = Gender.MALE; // Male, Female, Others // required
+    public static int employeeCount = 0;
 
 //    public Employee() {
 //        Logger.getGlobal().info("Default Constructor Called");
@@ -23,7 +24,7 @@ public class Employee {
         this.name = Objects.requireNonNullElse(name, "");
         this.salary = salary;
         this.phoneNumber = Objects.requireNonNullElse(phoneNumber, "");
-        this.gender = gender;
+        this.gender = Objects.requireNonNullElse(gender, Gender.MALE);
         Logger.getGlobal().info("First Parameterized Constructor");
     }
 
@@ -34,7 +35,7 @@ public class Employee {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
@@ -76,6 +77,10 @@ public class Employee {
     // this
     public void addBonus(float bonus){
         this.salary = this.salary + bonus;
+    }
+
+    public static void increaseEmployeeCount(){
+        employeeCount = employeeCount + 1;
     }
 
     @Override
