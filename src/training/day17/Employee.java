@@ -1,11 +1,11 @@
 package training.day17;
 
+import training.day2.Person;
 import training.day5.Gender;
 
 import java.util.Objects;
-import java.util.logging.Logger;
 
-public class Employee {
+public class Employee  {
 
     private String name = ""; // required
     private float salary; // required
@@ -94,4 +94,9 @@ public class Employee {
                 ", liscenceNumber='" + liscenceNumber + '\'' +
                 '}';
     }
+
+//    @Override
+//    public int compareTo(Employee o) {
+//        return Float.compare(o.salary, this.salary);
+//    }
 }

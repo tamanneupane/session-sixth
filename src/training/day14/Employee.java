@@ -4,7 +4,7 @@ import training.day5.Gender;
 
 import java.util.Objects;
 
-public class Employee {
+public class Employee implements Comparable<Employee> {
 
     private String name = ""; // required
     private float salary; // required
@@ -93,5 +93,10 @@ public class Employee {
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", liscenceNumber='" + liscenceNumber + '\'' +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Employee o) {
+        return Float.compare(o.salary, this.salary);
     }
 }
